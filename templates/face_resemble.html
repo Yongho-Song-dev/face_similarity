@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <title> face resembalance </title>
+<body>
+    <!-- 테이블 스타일 지정-->
+<style>
+ .table {
+  padding: 10px; 
+}
+.table_black th {
+    border: 3px solid #99A48A;
+    font-size: 17px;
+    color: #333;
+  	background: #D2D7CC;
+}
+.table_black td {
+    color: #333;
+    font-size: 15px;
+    text-align:center;
+    padding: 10px;
+
+}  
+.table_black th, .table_black td {
+
+    padding 2px;
+    border: 1px solid #ADB6A0;
+}  
+
+
+</style>
+    
+    <h2>Similar celebrity</h2>
+    {% if True %} <!-- 파이썬 코드 반응 확인하는 부분-->
+    <table class="table_black">
+    <tr>
+        <th> 1순위</th>
+        <th> 2순위</th>
+        <th> 3순위</th>
+        <th> 4순위</th>
+    </tr>
+    <tr>
+        <td> <!-- flask로 부터 전달된 이지미 path가 단긴 names를 순서대로 불러온다.-->
+            <img src="{{ url_for('static', filename=names[0]) }}" width=100 height=100 alt="best resembalance">
+        </td>
+        <td>
+            <img src="{{ url_for('static', filename=names[1]) }}" width=100 height=100 alt="best resembalance"> 
+        </td>
+        <td>
+            <img src="{{ url_for('static', filename=names[2]) }}" width=100 height=100 alt="best resembalance"> 
+        </td>
+        <td>
+            <img src="{{ url_for('static', filename=names[3]) }}" width=100 height=100 alt="best resembalance"> 
+        </td>
+    </tr>
+    </table>
+    {% endif %}
+  </body>
+</html>
